@@ -807,11 +807,11 @@ begin
     Response := TStringStream.Create('');
     RequestBody := TMemoryStream.Create;
 
-  //  SETTING_API:= 'AIzaSyCd_zLCCozkqQvEwZweldXtUzjndqQXVk8' ; //GetRandomAPI;
+
     gemini_ac:= 'https://generativelanguage.googleapis.com/v1beta/models/'+
                 'gemini-3-flash-preview:generateContent?key='+trim(apkey) ;
 
-                //AIzaSyCd_zLCCozkqQvEwZweldXtUzjndqQXVk8';
+
 
     s  := AnsiReplaceStr(s,':','\:');
     s  := AnsiReplaceStr(s,'''','\''');
