@@ -1,0 +1,1030 @@
+object MainForm: TMainForm
+  Left = 352
+  Height = 590
+  Top = 190
+  Width = 999
+  BorderIcons = [biSystemMenu, biMaximize]
+  Caption = 'Cleo Browser'
+  ClientHeight = 590
+  ClientWidth = 999
+  Font.Color = clWindowText
+  Font.Height = -12
+  Font.Name = 'Noto Sans'
+  Position = poScreenCenter
+  LCLVersion = '4.4.0.0'
+  WindowState = wsMaximized
+  OnCreate = FormCreate
+  OnShow = FormShow
+  object Panel9: TPanel
+    Left = 4
+    Height = 582
+    Top = 4
+    Width = 991
+    Align = alClient
+    BorderSpacing.Around = 4
+    BevelOuter = bvNone
+    ClientHeight = 582
+    ClientWidth = 991
+    ParentBackground = False
+    ParentColor = False
+    TabOrder = 0
+    object BrowserPageCtrl: TPageControl
+      Left = 0
+      Height = 582
+      Top = 0
+      Width = 688
+      Align = alClient
+      Images = ImageList1
+      PopupMenu = PopupMenu1
+      TabOrder = 0
+      TabPosition = tpBottom
+    end
+    object pnpageleft: TPanel
+      Left = 690
+      Height = 578
+      Top = 2
+      Width = 299
+      Align = alRight
+      BorderSpacing.Around = 2
+      BevelOuter = bvNone
+      ClientHeight = 578
+      ClientWidth = 299
+      Color = clWhite
+      ParentBackground = False
+      ParentColor = False
+      TabOrder = 1
+      object pageLeft: TcyPageControl
+        Left = 4
+        Height = 570
+        Top = 4
+        Width = 291
+        ActivePage = tbsBookmark
+        Align = alClient
+        BorderSpacing.Around = 4
+        ShowTabs = False
+        Style = tsFlatButton
+        TabIndex = 0
+        TabOrder = 0
+        TabPosition = tpLeft
+        ActiveTabColors.FromColor = clWhite
+        ActiveTabColors.SpeedPercent = 100
+        ActiveTabColors.ToColor = clBtnFace
+        InactiveTabColors.FromColor = clWhite
+        InactiveTabColors.SpeedPercent = 100
+        InactiveTabColors.ToColor = clBtnFace
+        object tbsBookmark: TTabSheet
+          Caption = 'tbsBookmark'
+          ClientHeight = 570
+          ClientWidth = 289
+          object Panel2: TPanel
+            Left = 3
+            Height = 22
+            Top = 3
+            Width = 283
+            Align = alTop
+            BorderSpacing.Around = 3
+            BevelOuter = bvNone
+            Caption = 'Daftar Bookmark'
+            Color = 16447985
+            Font.Color = clWindowText
+            Font.Height = -12
+            Font.Name = 'Segoe UI'
+            Font.Style = [fsBold]
+            ParentBackground = False
+            ParentColor = False
+            ParentFont = False
+            TabOrder = 0
+          end
+          object edtCariBookmark: TEdit
+            Left = 3
+            Height = 26
+            Top = 28
+            Width = 283
+            Align = alTop
+            Alignment = taCenter
+            BorderSpacing.Around = 3
+            TabOrder = 1
+            OnChange = edtCariBookmarkChange
+          end
+          object grdpages: TRxDBGrid
+            Cursor = crHandPoint
+            Left = 3
+            Height = 510
+            Top = 57
+            Width = 283
+            ColumnDefValues.BlobText = '(blob)'
+            TitleButtons = False
+            AutoSort = True
+            Columns = <            
+              item
+                Title.Alignment = taCenter
+                Title.Orientation = toHorizontal
+                Title.Caption = 'Title'
+                Width = 16
+                EditButtons = <>
+                Filter.DropDownRows = 0
+                Filter.EmptyValue = '(Empty)'
+                Filter.NotEmptyValue = '(Not empty)'
+                Filter.AllValue = '(All values)'
+                Filter.EmptyFont.Style = [fsItalic]
+                Filter.ItemIndex = -1
+                Footers = <>
+              end            
+              item
+                Title.Alignment = taCenter
+                Title.Orientation = toHorizontal
+                Title.Caption = 'Aplikasi'
+                Width = 280
+                FieldName = 'Nama'
+                EditButtons = <>
+                Filter.DropDownRows = 0
+                Filter.EmptyValue = '(Empty)'
+                Filter.NotEmptyValue = '(Not empty)'
+                Filter.AllValue = '(All values)'
+                Filter.EmptyFont.Style = [fsItalic]
+                Filter.ItemIndex = -1
+                Footers = <>
+              end>
+            KeyStrokes = <            
+              item
+                Command = rxgcShowFindDlg
+                ShortCut = 16454
+                Enabled = True
+              end            
+              item
+                Command = rxgcShowColumnsDlg
+                ShortCut = 16471
+                Enabled = True
+              end            
+              item
+                Command = rxgcShowFilterDlg
+                ShortCut = 16468
+                Enabled = True
+              end            
+              item
+                Command = rxgcShowSortDlg
+                ShortCut = 16467
+                Enabled = True
+              end            
+              item
+                Command = rxgcShowQuickFilter
+                ShortCut = 16465
+                Enabled = True
+              end            
+              item
+                Command = rxgcHideQuickFilter
+                ShortCut = 16456
+                Enabled = True
+              end            
+              item
+                Command = rxgcSelectAll
+                ShortCut = 16449
+                Enabled = True
+              end            
+              item
+                Command = rxgcDeSelectAll
+                ShortCut = 16429
+                Enabled = True
+              end            
+              item
+                Command = rxgcInvertSelection
+                ShortCut = 16426
+                Enabled = True
+              end            
+              item
+                Command = rxgcOptimizeColumnsWidth
+                ShortCut = 16427
+                Enabled = True
+              end            
+              item
+                Command = rxgcCopyCellValue
+                ShortCut = 16451
+                Enabled = True
+              end>
+            FooterOptions.DrawFullLine = False
+            SearchOptions.QuickSearchOptions = [loCaseInsensitive, loPartialKey]
+            SearchOptions.FromStart = False
+            SelectedFont.Color = clBlack
+            SelectedFont.Style = [fsBold, fsItalic]
+            OptionsRx = [rdgAllowColumnsForm, rdgAllowDialogFind, rdgAllowQuickFilter]
+            Align = alClient
+            AlternateColor = 16645620
+            BorderSpacing.Around = 3
+            Color = 16056051
+            BorderColor = clInfoBk
+            DrawFullLine = False
+            SelectedColor = 12973550
+            GridLineColor = 8574357
+            DataSource = dspages
+            DefaultRowHeight = 24
+            FixedCols = 0
+            Flat = True
+            Font.Color = clWindowText
+            Font.Height = -12
+            Font.Name = 'Noto Sans'
+            Options = [dgColumnResize, dgColumnMove, dgRowSelect, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit]
+            ParentFont = False
+            PopupMenu = pmBookmark
+            ReadOnly = True
+            Scrollbars = ssNone
+            TabOrder = 2
+            OnDblClick = grdpagesDblClick
+          end
+        end
+        object tbsHistori: TTabSheet
+          Caption = 'tbsHistori'
+          ClientHeight = 570
+          ClientWidth = 289
+          object Panel4: TPanel
+            Left = 3
+            Height = 22
+            Top = 3
+            Width = 283
+            Align = alTop
+            BorderSpacing.Around = 3
+            BevelOuter = bvNone
+            Caption = 'Histori Penelusuran'
+            Color = 15196917
+            Font.Color = clWindowText
+            Font.Height = -12
+            Font.Name = 'Segoe UI'
+            Font.Style = [fsBold]
+            ParentBackground = False
+            ParentColor = False
+            ParentFont = False
+            TabOrder = 0
+          end
+          object edtCariHistori: TEdit
+            Left = 3
+            Height = 26
+            Top = 28
+            Width = 283
+            Align = alTop
+            Alignment = taCenter
+            BorderSpacing.Around = 3
+            TabOrder = 1
+            OnChange = edtCariHistoriChange
+          end
+          object grdhistori: TRxDBGrid
+            Cursor = crHandPoint
+            Left = 3
+            Height = 510
+            Top = 57
+            Width = 283
+            ColumnDefValues.BlobText = '(blob)'
+            TitleButtons = False
+            AutoSort = True
+            Columns = <            
+              item
+                Title.Alignment = taCenter
+                Title.Orientation = toHorizontal
+                Title.Caption = 'Title'
+                Width = 16
+                EditButtons = <>
+                Filter.DropDownRows = 0
+                Filter.EmptyValue = '(Empty)'
+                Filter.NotEmptyValue = '(Not empty)'
+                Filter.AllValue = '(All values)'
+                Filter.EmptyFont.Style = [fsItalic]
+                Filter.ItemIndex = -1
+                Footers = <>
+              end            
+              item
+                Title.Alignment = taCenter
+                Title.Orientation = toHorizontal
+                Title.Caption = 'Aplikasi'
+                Width = 288
+                FieldName = 'NAMA'
+                EditButtons = <>
+                Filter.DropDownRows = 0
+                Filter.EmptyValue = '(Empty)'
+                Filter.NotEmptyValue = '(Not empty)'
+                Filter.AllValue = '(All values)'
+                Filter.EmptyFont.Style = [fsItalic]
+                Filter.ItemIndex = -1
+                Footers = <>
+              end>
+            KeyStrokes = <            
+              item
+                Command = rxgcShowFindDlg
+                ShortCut = 16454
+                Enabled = True
+              end            
+              item
+                Command = rxgcShowColumnsDlg
+                ShortCut = 16471
+                Enabled = True
+              end            
+              item
+                Command = rxgcShowFilterDlg
+                ShortCut = 16468
+                Enabled = True
+              end            
+              item
+                Command = rxgcShowSortDlg
+                ShortCut = 16467
+                Enabled = True
+              end            
+              item
+                Command = rxgcShowQuickFilter
+                ShortCut = 16465
+                Enabled = True
+              end            
+              item
+                Command = rxgcHideQuickFilter
+                ShortCut = 16456
+                Enabled = True
+              end            
+              item
+                Command = rxgcSelectAll
+                ShortCut = 16449
+                Enabled = True
+              end            
+              item
+                Command = rxgcDeSelectAll
+                ShortCut = 16429
+                Enabled = True
+              end            
+              item
+                Command = rxgcInvertSelection
+                ShortCut = 16426
+                Enabled = True
+              end            
+              item
+                Command = rxgcOptimizeColumnsWidth
+                ShortCut = 16427
+                Enabled = True
+              end            
+              item
+                Command = rxgcCopyCellValue
+                ShortCut = 16451
+                Enabled = True
+              end>
+            FooterOptions.DrawFullLine = False
+            SearchOptions.QuickSearchOptions = [loCaseInsensitive, loPartialKey]
+            SearchOptions.FromStart = False
+            SelectedFont.Color = clBlack
+            SelectedFont.Style = [fsBold, fsItalic]
+            OptionsRx = [rdgAllowColumnsForm, rdgAllowDialogFind, rdgAllowQuickFilter]
+            Align = alClient
+            AlternateColor = 16055805
+            BorderSpacing.Around = 3
+            BorderStyle = bsNone
+            Color = 15267065
+            BorderColor = clInfoBk
+            DrawFullLine = False
+            SelectedColor = 12973550
+            DataSource = dshistori
+            DefaultRowHeight = 20
+            FixedCols = 0
+            Flat = True
+            Font.Color = clWindowText
+            Font.Height = -12
+            Font.Name = 'Segoe UI'
+            Font.Style = [fsBold]
+            Options = [dgColumnResize, dgColumnMove, dgRowSelect, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit]
+            ParentFont = False
+            PopupMenu = pmHistori
+            ReadOnly = True
+            Scrollbars = ssNone
+            TabOrder = 2
+            OnDblClick = grdhistoriDblClick
+          end
+        end
+        object tbsCalculator: TTabSheet
+          Caption = 'tbsCalculator'
+          ClientHeight = 570
+          ClientWidth = 289
+          object Panel5: TPanel
+            Left = 3
+            Height = 22
+            Top = 3
+            Width = 283
+            Align = alTop
+            BorderSpacing.Around = 3
+            BevelOuter = bvNone
+            Caption = 'Kalkulator'
+            Color = 15196917
+            Font.Color = clWindowText
+            Font.Height = -12
+            Font.Name = 'Segoe UI'
+            Font.Style = [fsBold]
+            ParentBackground = False
+            ParentColor = False
+            ParentFont = False
+            TabOrder = 0
+          end
+          object GroupBox1: TGroupBox
+            Left = 4
+            Height = 254
+            Top = 312
+            Width = 281
+            Align = alBottom
+            BorderSpacing.Around = 4
+            Caption = 'Perhitungan'
+            ClientHeight = 231
+            ClientWidth = 277
+            ParentBackground = False
+            TabOrder = 1
+            object Label1: TLabel
+              Left = 6
+              Height = 15
+              Top = 6
+              Width = 265
+              Align = alTop
+              BorderSpacing.Around = 6
+              Caption = 'Angka 1'
+              Font.Color = clWindowText
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Style = [fsBold]
+              ParentFont = False
+            end
+            object Edit1: TEdit
+              Left = 6
+              Height = 25
+              Top = 31
+              Width = 265
+              Align = alTop
+              Alignment = taRightJustify
+              BorderSpacing.Top = 4
+              BorderSpacing.Bottom = 4
+              BorderSpacing.Around = 6
+              BorderStyle = bsNone
+              Font.Color = clWindowText
+              Font.Height = -18
+              Font.Name = 'Segoe UI'
+              Font.Style = [fsBold]
+              ParentFont = False
+              TabOrder = 0
+              Text = '0'
+            end
+            object Label2: TLabel
+              Left = 6
+              Height = 15
+              Top = 104
+              Width = 265
+              Align = alTop
+              BorderSpacing.Around = 6
+              Caption = 'Angka 2'
+              Font.Color = clWindowText
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Style = [fsBold]
+              ParentFont = False
+            end
+            object Edit2: TEdit
+              Left = 6
+              Height = 25
+              Top = 129
+              Width = 265
+              Align = alTop
+              Alignment = taRightJustify
+              BorderSpacing.Top = 4
+              BorderSpacing.Bottom = 4
+              BorderSpacing.Around = 6
+              BorderStyle = bsNone
+              Font.Color = clWindowText
+              Font.Height = -18
+              Font.Name = 'Segoe UI'
+              Font.Style = [fsBold]
+              ParentFont = False
+              TabOrder = 1
+              Text = '0'
+            end
+            object Label3: TLabel
+              Left = 6
+              Height = 15
+              Top = 164
+              Width = 265
+              Align = alTop
+              BorderSpacing.Around = 6
+              Caption = 'Angka Hasil'
+              Font.Color = clWindowText
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Style = [fsBold]
+              ParentFont = False
+            end
+            object Edit3: TEdit
+              Left = 6
+              Height = 25
+              Top = 189
+              Width = 265
+              Align = alTop
+              Alignment = taRightJustify
+              BorderSpacing.Top = 4
+              BorderSpacing.Bottom = 4
+              BorderSpacing.Around = 6
+              BorderStyle = bsNone
+              Font.Color = clWindowText
+              Font.Height = -18
+              Font.Name = 'Segoe UI'
+              Font.Style = [fsBold]
+              ParentFont = False
+              TabOrder = 2
+              Text = '0'
+            end
+            object Panel3: TPanel
+              Left = 6
+              Height = 32
+              Top = 66
+              Width = 265
+              Align = alTop
+              BorderSpacing.Around = 6
+              BevelOuter = bvNone
+              ClientHeight = 32
+              ClientWidth = 265
+              ParentBackground = False
+              TabOrder = 3
+              object SpeedButton1: TSpeedButton
+                Left = 0
+                Height = 32
+                Top = 0
+                Width = 36
+                Align = alLeft
+                Caption = '+'
+                Font.Color = clWindowText
+                Font.Height = -14
+                Font.Name = 'Segoe UI'
+                Font.Style = [fsBold]
+                ParentFont = False
+              end
+              object SpeedButton2: TSpeedButton
+                Left = 72
+                Height = 32
+                Top = 0
+                Width = 36
+                Align = alLeft
+                Caption = 'x'
+                Font.Color = clWindowText
+                Font.Height = -14
+                Font.Name = 'Segoe UI'
+                Font.Style = [fsBold]
+                ParentFont = False
+              end
+              object SpeedButton3: TSpeedButton
+                Left = 36
+                Height = 32
+                Top = 0
+                Width = 36
+                Align = alLeft
+                Caption = '-'
+                Font.Color = clWindowText
+                Font.Height = -14
+                Font.Name = 'Segoe UI'
+                Font.Style = [fsBold]
+                ParentFont = False
+              end
+              object SpeedButton4: TSpeedButton
+                Left = 108
+                Height = 32
+                Top = 0
+                Width = 36
+                Align = alLeft
+                Caption = '/'
+                Font.Color = clWindowText
+                Font.Height = -14
+                Font.Name = 'Segoe UI'
+                Font.Style = [fsBold]
+                ParentFont = False
+              end
+              object SpeedButton5: TSpeedButton
+                Left = 229
+                Height = 32
+                Top = 0
+                Width = 36
+                Align = alRight
+                Caption = 'C'
+                Font.Color = clWindowText
+                Font.Height = -14
+                Font.Name = 'Segoe UI'
+                Font.Style = [fsBold]
+                ParentFont = False
+              end
+            end
+          end
+          object RxDBGrid1: TRxDBGrid
+            Left = 4
+            Height = 253
+            Top = 55
+            Width = 281
+            ColumnDefValues.BlobText = '(blob)'
+            TitleButtons = False
+            AutoSort = True
+            KeyStrokes = <            
+              item
+                Command = rxgcShowFindDlg
+                ShortCut = 16454
+                Enabled = True
+              end            
+              item
+                Command = rxgcShowColumnsDlg
+                ShortCut = 16471
+                Enabled = True
+              end            
+              item
+                Command = rxgcShowFilterDlg
+                ShortCut = 16468
+                Enabled = True
+              end            
+              item
+                Command = rxgcShowSortDlg
+                ShortCut = 16467
+                Enabled = True
+              end            
+              item
+                Command = rxgcShowQuickFilter
+                ShortCut = 16465
+                Enabled = True
+              end            
+              item
+                Command = rxgcHideQuickFilter
+                ShortCut = 16456
+                Enabled = True
+              end            
+              item
+                Command = rxgcSelectAll
+                ShortCut = 16449
+                Enabled = True
+              end            
+              item
+                Command = rxgcDeSelectAll
+                ShortCut = 16429
+                Enabled = True
+              end            
+              item
+                Command = rxgcInvertSelection
+                ShortCut = 16426
+                Enabled = True
+              end            
+              item
+                Command = rxgcOptimizeColumnsWidth
+                ShortCut = 16427
+                Enabled = True
+              end            
+              item
+                Command = rxgcCopyCellValue
+                ShortCut = 16451
+                Enabled = True
+              end>
+            FooterOptions.DrawFullLine = False
+            SearchOptions.QuickSearchOptions = [loCaseInsensitive, loPartialKey]
+            SearchOptions.FromStart = False
+            OptionsRx = [rdgAllowColumnsForm, rdgAllowDialogFind, rdgAllowQuickFilter]
+            Align = alClient
+            BorderSpacing.Around = 4
+            BorderStyle = bsNone
+            Color = clWindow
+            DrawFullLine = False
+            SelectedColor = clHighlight
+            FixedCols = 0
+            Options = [dgEditing, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit]
+            ReadOnly = True
+            Scrollbars = ssVertical
+            TabOrder = 2
+          end
+          object Label4: TLabel
+            Left = 6
+            Height = 18
+            Top = 31
+            Width = 277
+            Align = alTop
+            BorderSpacing.Around = 6
+            Caption = 'Histori'
+          end
+        end
+        object tbsSchedule: TTabSheet
+          Caption = 'tbsSchedule'
+          ClientHeight = 570
+          ClientWidth = 289
+          object Panel6: TPanel
+            Left = 3
+            Height = 22
+            Top = 3
+            Width = 283
+            Align = alTop
+            BorderSpacing.Around = 3
+            BevelOuter = bvNone
+            Caption = 'Jadwal Kegiatan'
+            Color = 15196917
+            Font.Color = clWindowText
+            Font.Height = -12
+            Font.Name = 'Segoe UI'
+            Font.Style = [fsBold]
+            ParentBackground = False
+            ParentColor = False
+            ParentFont = False
+            TabOrder = 0
+          end
+          object RxDBGrid2: TRxDBGrid
+            Left = 4
+            Height = 345
+            Top = 29
+            Width = 281
+            ColumnDefValues.BlobText = '(blob)'
+            TitleButtons = False
+            AutoSort = True
+            KeyStrokes = <            
+              item
+                Command = rxgcShowFindDlg
+                ShortCut = 16454
+                Enabled = True
+              end            
+              item
+                Command = rxgcShowColumnsDlg
+                ShortCut = 16471
+                Enabled = True
+              end            
+              item
+                Command = rxgcShowFilterDlg
+                ShortCut = 16468
+                Enabled = True
+              end            
+              item
+                Command = rxgcShowSortDlg
+                ShortCut = 16467
+                Enabled = True
+              end            
+              item
+                Command = rxgcShowQuickFilter
+                ShortCut = 16465
+                Enabled = True
+              end            
+              item
+                Command = rxgcHideQuickFilter
+                ShortCut = 16456
+                Enabled = True
+              end            
+              item
+                Command = rxgcSelectAll
+                ShortCut = 16449
+                Enabled = True
+              end            
+              item
+                Command = rxgcDeSelectAll
+                ShortCut = 16429
+                Enabled = True
+              end            
+              item
+                Command = rxgcInvertSelection
+                ShortCut = 16426
+                Enabled = True
+              end            
+              item
+                Command = rxgcOptimizeColumnsWidth
+                ShortCut = 16427
+                Enabled = True
+              end            
+              item
+                Command = rxgcCopyCellValue
+                ShortCut = 16451
+                Enabled = True
+              end>
+            FooterOptions.DrawFullLine = False
+            SearchOptions.QuickSearchOptions = [loCaseInsensitive, loPartialKey]
+            SearchOptions.FromStart = False
+            OptionsRx = [rdgAllowColumnsForm, rdgAllowDialogFind, rdgAllowQuickFilter]
+            Align = alClient
+            BorderSpacing.Around = 4
+            BorderStyle = bsNone
+            Color = clWindow
+            DrawFullLine = False
+            SelectedColor = clHighlight
+            FixedCols = 0
+            Options = [dgEditing, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit]
+            ReadOnly = True
+            Scrollbars = ssVertical
+            TabOrder = 1
+          end
+          object GroupBox2: TGroupBox
+            Left = 4
+            Height = 188
+            Top = 378
+            Width = 281
+            Align = alBottom
+            BorderSpacing.Around = 4
+            Caption = 'Input Data'
+            ClientHeight = 165
+            ClientWidth = 277
+            ParentBackground = False
+            TabOrder = 2
+            object Label6: TLabel
+              Left = 6
+              Height = 15
+              Top = 6
+              Width = 265
+              Align = alTop
+              BorderSpacing.Around = 6
+              Caption = 'Tanggal'
+              Font.Color = clWindowText
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Style = [fsBold]
+              ParentFont = False
+            end
+            object DBDateEdit1: TDBDateEdit
+              Left = 6
+              Height = 26
+              Top = 27
+              Width = 265
+              CalendarDisplaySettings = [dsShowHeadings, dsShowDayNames]
+              DateOrder = doNone
+              ButtonWidth = 23
+              Align = alTop
+              BorderSpacing.Around = 6
+              NumGlyphs = 1
+              MaxLength = 0
+              TabOrder = 0
+              Text = 'DBDateEdit1'
+            end
+            object Label7: TLabel
+              Left = 6
+              Height = 15
+              Top = 59
+              Width = 265
+              Align = alTop
+              BorderSpacing.Around = 6
+              Caption = 'Kegiatan'
+              Font.Color = clWindowText
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Style = [fsBold]
+              ParentFont = False
+            end
+            object DBMemo1: TDBMemo
+              Left = 6
+              Height = 79
+              Top = 80
+              Width = 265
+              Align = alClient
+              BorderSpacing.Around = 6
+              TabOrder = 1
+            end
+          end
+        end
+      end
+    end
+  end
+  object PopupMenu1: TPopupMenu
+    Images = ImageList1
+    Left = 384
+    Top = 166
+    object mnTabAdd: TMenuItem
+      Caption = 'Tab Baru'
+      ImageIndex = 1
+      OnClick = AddTabBtnClick
+    end
+    object mnCloseTab: TMenuItem
+      Caption = 'Tutup Tab Ini'
+      ImageIndex = 2
+      OnClick = RemoveTabBtnClick
+    end
+  end
+  object koneksi: TZConnection
+    ControlsCodePage = cCP_UTF8
+    Properties.Strings = (
+      'RawStringEncoding=DB_CP'
+    )
+    DisableSavepoints = False
+    Port = 0
+    Protocol = 'sqlite'
+    Left = 384
+    Top = 115
+  end
+  object tpages: TZTable
+    SortedFields = 'Nama'
+    Connection = koneksi
+    TableName = 'web'
+    IndexFieldNames = 'Nama Asc'
+    Left = 384
+    Top = 237
+  end
+  object dspages: TDataSource
+    DataSet = tpages
+    Left = 384
+    Top = 294
+  end
+  object ImageList1: TImageList
+    Height = 24
+    Width = 24
+    Left = 384
+    Top = 64
+    Bitmap = {
+      4C7A040000001800000018000000670700000000000078DAED9A7B6C53551CC7
+      EFBD6D6FBBAECF756C404C160506BE883C4CD40019E05F3E48448811D4046330
+      6A48D43F944888A081F8D6F8560213141565B0B9876E636543F65064F4B5758F
+      3E58CBDA32F6646E6DB7F51E7FBFDBC766F7A0EDDAC4989DE49B737EAFCF3DF7
+      DC7BCF49D651D4FFBB194956B66E6CDE8EC6D1CC338D6399FD97C632FB4065A0
+      670C44A94E98FB3770FD9A7C9D4FE30791A0320297BC1A6EDCD6F8F47ECD378D
+      43990BE361EB07351B0C8319DD20AFE17AC639E80968AF7E50AD350C6AAA61FC
+      26FA8C831AB0338631176B629A779FE249639F7A04A4370D69EE867EC0D8AF2E
+      0DC6D45A507570ACAA0079CC7FABEFC45C63BFCA67EC553C3113BBA96BDE7CD3
+      5595DFD4A522A66BAAA2A62ED527386EEA52AFC1388CB5E0E3F9CD9E8C7BF8BC
+      2E35E4287F6EBAA6E2B01619D3F1CD6EE5912697D2677629BF6C76290740C4EC
+      52049ADDCA3A181734772A3A9B5C0A0F8E21CF0C22CD41F536772A0F43EF031D
+      9A725D6CE9D96687C20FFA20782F94CCDC21F7363B158D66A7BCCAEC5498C1F6
+      9B3B143EB343696871284FC3B80EF2875A5A2839D6B438141F823D62B1C8B2A2
+      F9AD36F9332D5639696F97DDC6DB76F932B4CD56C5B6700ED8DA168BBC3A72BF
+      10C39C169B7C29DA58CBD758E43BA3F9EDADB2AFDB5A659E886D96E5814DB08F
+      CCA155A66D6B91558FDBF2B598D3D6967E7FD8870CB00F4FE21BD30DED26D980
+      C5985EC9CB94AE6F37A5138B51561FF681DD6B41457264B59803B5C688CF28EB
+      079F299A6FD1498D165D7ABF452FAD44B5EBA43AF09176BDB421EC03BBD7AA07
+      7E38472FADC31C8B41AA1FCF49BB6EBD24D545F36D7F4A0ED92EA4B9C3F6E5BF
+      24EBC126E05F17F6592FA469C117591FEB1FD2D59863BD287D28C2B990D603FA
+      389A6F6F90ECB4D74B88BD8E5DC6DBD0A36DAB933C15C9A997684111BEBD2EED
+      71CCB1D4B277F073AA97AEE4190D921DD17CC779E9C2CBE7C423A0F7D1EE29A3
+      1430F6821AEDBF8B2BA06F0AC659EFE51AF125D0297B8DF81CF87CD7CE07DF4F
+      187F8235D64A4A39D537E0A862F3413E8756FCA943CBF68388B38A0D38B56C2D
+      F43F83DDD95125F6405F0079CD180FA9CF71467414FA11A756FCD574DFAFED0C
+      95EDAC10F941C4512E2C7496B3EFE2D8F59B6825C69D95222DD8FCFA74948B56
+      610CF491A34254E12C8771B9C8D75142CDB8673B8BD9ED574A853E90C1512A5A
+      ED2C150E5C291316610C7C5A5075685C8131CCE92C119AAE9408879C25EC13B1
+      ECA1EED3C23C5791A00B340CAA06115791F0A0BB5070D60DB6BB88793DE813D4
+      80BCA06E57A1706D3C6740D74FD47C770173C47D9219051194EB24C3794E3281
+      B00DF2810E7B4E5159899E6357BFA7B2AFFE483D7BF5045D01EAF3FC48F7832A
+      3D27A8A73146CDB5A4B57D964559FB6D4BF7BE61CB2D0655C6A962AC3DD8BE78
+      DE946CDB9275FB6DB9BD20324BF5C0B5D64E9E7752D861754FBC0FBCAF24B243
+      5AB227CC0FAE5DB2F94B7F19E72F399B6C3E32E3E55FF6FEC92B55FC709BE38F
+      AFF78D9ADDFBC77F963FF77CE3E37778FF025D48193FF1FD21B5FB5BAAF7673C
+      0BF0DC49E6F9B2AF353773E21986671AFA93C2B6E6AE99F20C866BE27DE1DAC5
+      7BBE876A5E8B9EF75CFBEFB4CD9BC9CA2D5B881EC481489CE2B66E253A644CC7
+      C77802DC7F0919D3F1211E982D1F1933F04932142BFFF9E749E7F1E3E4FC741C
+      8C614EA27CACC7F3C46020D5D131F461ECD831529B281FD5D848CE22C7681CBF
+      C654BE44F913E78A3CD474F794287FE29C679AF76CF8172F06E79D0A7E2AD727
+      95CF37D5EF277E3B53D58785B1E79E23AE643CDF24ED0F29DDDF52BD3FE3D910
+      BA46C2E7CBA38F9215732775CADA77A06F53C45E0EE240F87E27FF198AA52729
+      A99CE39506E3E4B69B29860908B6BD4A048FBF42289AC1FB589C34BA48728812
+      B11C5BD049D8420FA158314789255F27899E45098423824DCF12710DE1257878
+      2701DF28C416CC9A2E14BE453102C21E6F8BF0D91FAC047D94907D2B01A200B4
+      08F400E865600C331B1E8BB0C3421FC6F89C60EEA2506D747B00E6F836A5C8A8
+      A4D2554E98D758E81DE4456B1610F61BE3243E9B6FE0631373F95A64200B99C1
+      EBBA784E760E61D66D2682EDBB8970F71122FAA29E888B7B267127097230176B
+      B01619C80A5D13D9F7C07587E89B9670EC69F78D7937105BD445E89C5B03C0F4
+      023BFC77D0FBC01EA66FBE3DC0FE722D717E492FA117DF856C1F30F3A29EC31A
+      BC267DCB728E2DEE8E9F5DDA47E8DC551C30FCC09AEEB7E0FBE13BF5C31C389C
+      4BCCECB201422FBB9B83EF7A34F44C676A0F621E73FBBD9C583B7A6376D508C1
+      5C98D7285F1B5B3B80CF1FEF39967509BD2B0762FFC244F974C6FC98D7875667
+      13D89FF263E64BE57A66E58698F9CC8AF5046A74B1EF39EC90E0911726BFDB47
+      9B7845FB31176B62A4E3FF3210E14B9F8D730BAE04F74C06F67D9AE698BCAD84
+      3D618FC4852F7E1A7E06B1ECA71B3157F49196887FBD4E044FEE81FD5E12C0F7
+      16FCEFF0C231F8308639981BE26F8C81BF8B9FFF8E7D8456CD0BF0672EC37C0F
+      7DCE849C9C908FA3959963981BE2EF8A81FF79643F14081AF8BD63FAB60ACE99
+      9A097BE86731F0F1FF13F0F7F34D719C199B4235EF4507FE017E622E38
+    }
+  end
+  object thistori: TZTable
+    SortedFields = 'ID'
+    Connection = koneksi
+    TableName = 'histori'
+    IndexFieldNames = 'ID Asc'
+    Left = 384
+    Top = 352
+  end
+  object dshistori: TDataSource
+    DataSet = thistori
+    Left = 384
+    Top = 410
+  end
+  object pmBookmark: TPopupMenu
+    Left = 211
+    Top = 461
+    object mnHapusBookmark: TMenuItem
+      Caption = 'Hapus'
+      OnClick = mnHapusBookmarkClick
+    end
+    object mnEditBookmark: TMenuItem
+      Caption = 'Edit'
+      OnClick = mnEditBookmarkClick
+    end
+    object MenuItem3: TMenuItem
+      Caption = 'Jadikan Default'
+      OnClick = MenuItem3Click
+    end
+  end
+  object pmHistori: TPopupMenu
+    Left = 211
+    Top = 384
+    object mnHapusHistori: TMenuItem
+      Caption = 'Hapus'
+      OnClick = mnHapusHistoriClick
+    end
+  end
+  object qhistori50: TZQuery
+    Connection = koneksi
+    SQL.Strings = (
+      'select * from histori order by id desc limit 30'
+    )
+    Params = <>
+    Left = 224
+    Top = 147
+  end
+  object tvhistori: TZTable
+    SortedFields = 'ID'
+    Connection = koneksi
+    TableName = 'v_histori'
+    IndexFieldNames = 'ID Asc'
+    Left = 384
+    Top = 493
+  end
+end

@@ -1,0 +1,35 @@
+object ChildForm: TChildForm
+  Left = 535
+  Height = 551
+  Top = 101
+  Width = 780
+  Caption = 'Cleo'
+  ClientHeight = 551
+  ClientWidth = 780
+  Color = clBtnFace
+  DesignTimePPI = 120
+  Font.Color = clWindowText
+  Font.Height = -15
+  Font.Name = 'Segoe UI'
+  LCLVersion = '4.4.0.0'
+  OnClose = FormClose
+  OnDestroy = FormDestroy
+  OnShow = FormShow
+  object WVWindowParent1: TWVWindowParent
+    Left = 0
+    Height = 551
+    Top = 0
+    Width = 780
+    Align = alClient
+    TabOrder = 0
+    Browser = WVBrowser1
+  end
+  object WVBrowser1: TWVBrowser
+    TargetCompatibleBrowserVersion = '95.0.1020.44'
+    AllowSingleSignOnUsingOSPrimaryAccount = False
+    OnAfterCreated = WVBrowser1AfterCreated
+    OnWindowCloseRequested = WVBrowser1WindowCloseRequested
+    Left = 180
+    Top = 210
+  end
+end
